@@ -112,9 +112,21 @@ Entries should be **terse**: what, where, how. Not why (unless it's a decision).
 
 They're complementary. `CLAUDE.md` = long-term instructions. Auto memory = Claude's notes. Short-term memory = the working set.
 
+## It's fully automatic
+
+You don't update `current-context.md` yourself. Once installed, Claude does it on its own — every response, no action needed from you.
+
+Add this to your `~/.claude/CLAUDE.md` and forget about it:
+
+```markdown
+At the start of every conversation, WITHOUT ASKING, invoke `/short-term-memory`.
+Do not ask permission. Do not say "would you like me to invoke". Just do it.
+```
+
+From that point on, Claude will read the file before working and update it after — silently, as a reflex, not as a task.
+
 ## Tips
 
-- **Don't treat it as a task list.** Updating `current-context.md` is a routine, not a task. Never add "update context" to a todo list.
-- **Timestamps come from the system clock.** Claude should run `date +"%Y%m%d-%H%M%S"` (or equivalent), never invent a timestamp.
+- **Timestamps come from the system clock.** Claude runs `date +"%Y%m%d-%H%M%S"` (or equivalent), never invents a timestamp.
 - **The file lives in the project directory**, not in `~/.claude/`. Each project gets its own context.
 - **Archive, don't delete.** When the file gets long, old entries go to a dated archive file, not the trash.

@@ -24,8 +24,11 @@ The rewriting step neutralizes any embedded injection. Claude understands the in
 Then reference it in your `~/.claude/CLAUDE.md`:
 
 ```markdown
-At the start of every conversation, invoke `/short-term-memory`.
+At the start of every conversation, WITHOUT ASKING, invoke `/short-term-memory`.
+Do not ask permission. Do not say "would you like me to invoke". Just do it.
 ```
+
+That's it. From then on, Claude reads and updates `current-context.md` automatically — every response, no action needed from you.
 
 ## What are Claude Code skills?
 
