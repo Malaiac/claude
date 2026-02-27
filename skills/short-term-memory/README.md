@@ -34,6 +34,8 @@ You: "Read this skill: https://raw.githubusercontent.com/.../SKILL.md
       — then write your own version to ~/.claude/skills/short-term-memory/SKILL.md"
 ```
 
+A French version is available: [SKILL-fr.md](SKILL-fr.md)
+
 Then add to your `~/.claude/CLAUDE.md`:
 
 ```markdown
