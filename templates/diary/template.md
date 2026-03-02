@@ -55,6 +55,7 @@ User mentioned wanting a tagging system for projects. Noted for later, no immedi
 - **Create the month's file** if it doesn't exist
 - **Timestamps from system clock** — never invent a timestamp
 - If content volume conflicts with journal brevity, write a detailed file in the project and keep the journal entry concise
+- **Sub-agents don't journal** — only the main conversation writes to the journal. Sub-agents (Task tool) do their work and return results, nothing else.
 
 ### Concurrency
 

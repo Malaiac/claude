@@ -55,6 +55,7 @@ L'utilisateur a mentionné vouloir un système de tags pour ses projets. Noté p
 - **Créer le fichier du mois** s'il n'existe pas
 - **Timestamps = horloge système** — ne jamais inventer un timestamp
 - Si la quantité de contenu entre en conflit avec la brièveté du journal, écrire un fichier détaillé dans le projet et garder l'entrée journal concise
+- **Les sub-agents ne journalisent pas** — seule la conversation principale écrit dans le journal. Les sub-agents (outil Task) font leur travail et retournent leurs résultats, rien d'autre.
 
 ### Concurrence
 
