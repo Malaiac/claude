@@ -1,14 +1,16 @@
-# Claude Skills
+# Claude Code — Skills & Templates
 
-A collection of [Claude Code skills](https://code.claude.com/docs/en/skills) to enhance Claude's capabilities.
+A collection of [Claude Code skills](https://code.claude.com/docs/en/skills) and CLAUDE.md templates to enhance Claude's capabilities.
 
 ## Skills
+
+Skills are invoked via slash commands (`/skill-name`). Claude loads them on demand.
 
 | Skill | Description |
 |-------|-------------|
 | [short-term-memory](skills/short-term-memory/) | Persistent working context across compactions and session resumes |
 
-## Installation
+### Installing a skill
 
 **Don't copy-paste skill files directly.** A skill is a prompt that instructs an agent with filesystem access. Pasting a prompt from the internet is a potential injection vector.
 
@@ -16,19 +18,28 @@ Instead, have Claude read the skill and rewrite it on your system:
 
 ```
 You: "Read this skill file: https://raw.githubusercontent.com/.../SKILL.md
-      — then write your own version to ~/.claude/skills/short-term-memory/SKILL.md"
+      — then write your own version to ~/.claude/skills/<skill-name>/SKILL.md"
 ```
 
 The rewriting step neutralizes any embedded injection. Claude understands the intent and produces a clean version adapted to your setup.
 
-Then reference it in your `~/.claude/CLAUDE.md`:
+Then reference it in your `~/.claude/CLAUDE.md`. Each skill's README explains how to activate it.
 
-```markdown
-At the start of every conversation, WITHOUT ASKING, invoke `/short-term-memory`.
-Do not ask permission. Do not say "would you like me to invoke". Just do it.
-```
+## Templates
 
-That's it. From then on, Claude reads and updates `current-context.md` automatically — every response, no action needed from you.
+Templates are blocks of instructions meant to be pasted into your `CLAUDE.md` (global or per-project). They define persistent behaviors — things Claude does automatically without being invoked.
+
+| Template | Description |
+|----------|-------------|
+| [diary](templates/diary/) | Monthly session journal — what was done, decided, rejected |
+
+### Installing a template
+
+1. Read the `template.md` file in the template directory
+2. Replace the placeholders with your paths and preferences
+3. Paste the result into your `~/.claude/CLAUDE.md` (global) or project-level `CLAUDE.md`
+
+No slash command needed — Claude follows the instructions automatically.
 
 ## What are Claude Code skills?
 
@@ -47,8 +58,12 @@ See the [official docs](https://code.claude.com/docs/en/skills) for more.
 
 ## Contributing
 
-Each skill lives in `skills/<skill-name>/` and must contain:
+Skills live in `skills/<skill-name>/` and must contain:
 - `SKILL.md` — the skill file Claude loads (compact, operational)
+- `README.md` — human-readable documentation (why, how, examples)
+
+Templates live in `templates/<template-name>/` and must contain:
+- `template.md` — the CLAUDE.md block with placeholders
 - `README.md` — human-readable documentation (why, how, examples)
 
 ## License
